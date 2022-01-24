@@ -1,0 +1,21 @@
+<mat-list>
+  <mat-list-item *ngFor="let m of messages">
+    <p>{{ m }}</p>
+  </mat-list-item>
+</mat-list>
+
+<mat-form-field class="example-form-field" appearance="fill">
+  <mat-label>Message from Jan</mat-label>
+  <input matInput type="text" [(ngModel)]="message" />
+  <button
+    *ngIf="message"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="value = ''"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+<button mat-button (click)="onClicked()">Send</button>
