@@ -43,7 +43,7 @@ export class GraphQlService {
     userId: Guid
   ): Observable<ReceivedMessagesByUserIdSubscriptionSubscription | undefined> {
     return this.receivedMessagesByUserIdSubscription
-      .subscribe({ user_id: userId })
+      .subscribe({ user_id: userId.toString() })
       .pipe(
         tap((result) => console.log(result)),
         map((result) => result.data)
