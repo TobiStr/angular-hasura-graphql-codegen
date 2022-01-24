@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  graphqlWSEndpoint: 'wss://<your-server>/v1/graphql',
+  graphqlWSEndpoint: 'wss://summary-alpaca-12.hasura.app/v1/graphql',
 };
 
 /*
