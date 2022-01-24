@@ -1,0 +1,31 @@
+query GetAllUsersMessagesQuery {
+  user {
+    id
+    name
+    sent_messages {
+      recipient {
+        name
+      }
+      created_at
+      text
+    }
+  }
+}
+
+mutation SendMessageMutation($sender_id: uuid!, $text: String!) {
+  insert_message_one(object: { sender_id: $sender_id, text: $text }) {
+    created_at
+  }
+}
+
+subscription ReceivedMessagesByUserIdSubscription($user_id: uuid!) {
+  user_by_pk(id: $user_id) {
+    received_messages {
+      sender {
+        name
+      }
+      created_at
+      text
+    }
+  }
+}
