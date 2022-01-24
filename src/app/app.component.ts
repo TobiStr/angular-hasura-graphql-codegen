@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { GraphQlService } from './@graphql/graphql.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'codegen-showcase';
+  constructor(private graphQlService: GraphQlService) {}
+
+  
 }
