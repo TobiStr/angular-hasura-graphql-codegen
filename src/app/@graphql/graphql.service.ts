@@ -28,9 +28,13 @@ export class GraphQlService {
       .valueChanges.pipe(tap((result) => console.log(result)));
   }
 
-  public SendMessage(userId: Guid, message: string): void {
+  public SendMessage(senderId: Guid, recipientId: Guid, message: string): void {
     this.sendMessageMutation
-      .mutate({ sender_id: userId, text: message })
+      .mutate({
+        sender_id: senderId.toString(),
+        recipient_id: recipientId.toString(),
+        text: message,
+      })
       .pipe(tap((result) => console.log(result)))
       .subscribe();
   }
