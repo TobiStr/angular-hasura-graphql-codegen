@@ -12,8 +12,14 @@ query GetAllUsersMessagesQuery {
   }
 }
 
-mutation SendMessageMutation($sender_id: uuid!, $text: String!) {
-  insert_message_one(object: { sender_id: $sender_id, text: $text }) {
+mutation SendMessageMutation(
+  $sender_id: uuid!
+  $recipient_id: uuid!
+  $text: String!
+) {
+  insert_message_one(
+    object: { sender_id: $sender_id, recipient_id: $recipient_id, text: $text }
+  ) {
     created_at
   }
 }
