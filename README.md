@@ -1,6 +1,7 @@
 # GraphQl Codegen Showcase with Angular and Hasura
 
 This repository is part of the article, which can be found here:
+
 https://medium.com/@tobias.streng/hasura-graphql-and-auto-code-generation-with-angular-2e6321e4d532 
 
 
